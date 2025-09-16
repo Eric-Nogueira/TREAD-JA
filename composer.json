@@ -4,9 +4,5 @@
             "app:\\": "app",
             "core:\\": "core"
         }
-},
-    "require": {
-        "twig/twig": "^3.21",
-        "twig/extra-bundle": "^3.21"
-    }
+}
 }
