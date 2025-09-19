@@ -56,7 +56,7 @@ class Controller
         $controllerExist = false;
 
         foreach ($this->folders as $folder) {
-            if (class_exists("{$folder}\{$controller}")) {
+            if (class_exists("{$folder}\\{$controller}")) {
                 $controllerExist = true;
                 $this->namespace = $folder;
                 $this->controller = $controller;
@@ -68,7 +68,7 @@ class Controller
 
     private function InstantiateController()
     {
-        $controller = "{$this->namespace}\{$this->controller}";
+        $controller = "{$this->namespace}\\{$this->controller}";
         return new $controller;
     }
 
