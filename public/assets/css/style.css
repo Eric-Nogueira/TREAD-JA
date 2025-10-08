@@ -22,16 +22,6 @@ body {
     display: flex;
 }
 
-header {
-    background: var(--color-scarlet-600);
-    margin: 0;
-    padding: 5px;
-    display: grid;
-    width: 100%;
-    height: 90px;
-    align-items: center;
-    align-content: center;
-}
 
 .nav-bar {
     display: flex;

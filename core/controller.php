@@ -15,8 +15,8 @@ class Controller
     private $controller;
     private $namespace;
     private $folders = [
-        'app/controllers/portal',
-        'app/controllers/admin'
+        'app\\controllers\\portal',
+        'app\\controllers\\admin'
     ];
 
     public function __construct()
@@ -35,20 +35,28 @@ class Controller
 
     private function isHome()
     {
-        return ($this->uri == '/');
+        //var_dump($this->uri);
+        if ($this->uri == "/") {
+            return $this->uri == "/";
+        }
+        echo "Isn't Home";
     }
 
     private function controllerHome()
     {
-        if (!$this->controllerExists('HomeController')) {
-            throw new ControllerNotExistException("Essa página não existe");
+
+        var_dump($this->controllerExists('HomeController'));
+
+        if ($this->controllerExists('HomeController')) {
+            return $this->InstantiateController();
         }
-        return $this->InstantiateController();
+
+        throw new ControllerNotExistException("Essa página não existe");
     }
 
     private function controllerNotHome()
     {
-
+        echo "ERROR 404 \v";
     }
 
     private function controllerExists($controller)
@@ -56,10 +64,13 @@ class Controller
         $controllerExist = false;
 
         foreach ($this->folders as $folder) {
-            if (class_exists("{$folder}\\{$controller}")) {
+            echo 'foreach executando                    ';
+            if (class_exists("$folder\\$controller")) {
                 $controllerExist = true;
                 $this->namespace = $folder;
                 $this->controller = $controller;
+
+                var_dump($controllerExist);
             }
         }
 
@@ -68,10 +79,10 @@ class Controller
 
     private function InstantiateController()
     {
-        $controller = "{$this->namespace}\\{$this->controller}";
-        return new $controller;
+        echo "INSTANTIATED\t";
+        //$controller = "{$this->namespace}\\{$this->controller}";
+        //return new $controller;
     }
-
 }
-
-//NÃO ESTÁ CARREGANDO A HomeController
+//O SISTEMA NÃO RECONHECE A CLASSE 'HOMECONTROLLER' E A FUNÇÃO 'CONTROLLEREXISTS()' RETORNA FALSE
+//O 'FOREACH' PRESENTE NA FUNÇÃO 'CONTROLLEREXISTS()' EXECUTA QUATRO VEZES, SENDO QUE ELE DEVERIA EXECUTAR SOMENTE DUAS VEZES

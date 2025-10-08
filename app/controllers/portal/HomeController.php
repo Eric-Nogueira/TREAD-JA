@@ -6,6 +6,7 @@ class HomeController
 {
     public function index()
     {
-        dd('homeController');
+        //dd('homeController');
+        echo "funcionando";
     }
 }
