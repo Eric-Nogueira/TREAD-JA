@@ -13,7 +13,8 @@ Class Sobre extends Page {
 
         $content = View::render('pages/sobre', 
         ['name'=> $org->name,
-    'description' => $org->about]);
+    'description' => $org->about,
+'content' => "<img src='https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif' alt='Gif animado de boas-vindas'/>"]);
 
    return parent::getPage('Tread JA - Sobre', "<h1>Sobre</h1>");
     }
