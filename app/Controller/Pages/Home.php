@@ -12,10 +12,9 @@ Class Home extends Page {
 
 
         $content = View::render('pages/home', 
-        ['name'=> $org->name,
-    'description' => $org->about]);
+        ['name'=> $org->name]);
 
-   return parent::getPage('Home', "<h1>Olá, mundo</h1>");
+   return parent::getPage('Tread JA - Início', "<h1>Olá, mundo</h1>");
     }
 }
 

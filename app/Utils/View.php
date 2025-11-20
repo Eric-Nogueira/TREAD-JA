@@ -4,6 +4,11 @@ namespace App\Utils;
 
 class View
 {
+    private static $vars = [];
+
+    public static function init($vars = []){
+        self::$vars = $vars;
+    }
 
     private static function getContentView($view)
     {
@@ -18,6 +23,8 @@ class View
         $keys = array_map(function($item){
             return '{{'. $item .'}}';
         }, $keys);
+
+        $vars = array_merge(self::$vars, $vars);
 
         return str_replace($keys, array_values($vars), $contentView);
     }
