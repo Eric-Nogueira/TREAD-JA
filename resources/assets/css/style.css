@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Work Sans", sans-serif;
+  color: #070707;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background: #fff3e1;
+  display: flex;
+}
+
+header {
+  padding: 20px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  top: 0;
+  width: 100%;
+}
+
+footer {
+  bottom: 0px;
+  width: 100%;
+  margin-bottom: 0;
+  padding: 20px 0px;
+  display: flex;
+  margin-top: 50px;
+  color: white;
+  background: #ff3200;
+}
+
+/*ESSA PESTE NÃO QUER FICAR NO FIM DA PÁGINA*/
+
+header nav {
+  display: flex;
+  padding: 10px 50px;
+  gap: 15px;
+  background: #ff3200;
+  border-radius: 0.5rem;
+  min-width: 30rem;
+  color: white;
+  background-size: cover;
+  justify-content: center;
+}
+
+header nav a {
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  font-size: 18px;
+  transition: 0.2s;
+}
+
+header nav a:hover, header nav a:focus, ul.popup li a:hover, ul.popup li a:focus {
+  transform: translateY(-3.5px);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+header i {
+  font-size: 32px;
+  color: #ff3200;
+}
+
+section {
+  margin-bottom: 25px;
+}
+
+.highlight {
+  color: #ff3200;
+}
+
+h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+ul.popup {
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background: #ff3200;
+  color: white;
+  border-radius: 5px;
+  list-style: none;
+  padding: 10px 15px;
+  width: 150px;
+}
+
+ul.popup li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 8px 0;
+  transition: 0.2s;
+}
+
+.settings {
+    color: #ff3200 !important;
+}
+
+.settings:hover + ul.popup,
+ul.popup:hover {
+  display: block;
+}
+
+
+
+button {
+  background: #ff3200;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #e62e00;
+}
+

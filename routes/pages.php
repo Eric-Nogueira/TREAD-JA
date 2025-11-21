@@ -15,8 +15,14 @@ $obRouter->get('/sobre', [
     }
 ]);
 
-$obRouter->get('/pagina/{idPagina}', [
+$obRouter->get('/contato', [
     function ($idPagina) {
-        return new Response(200, 'Página ' . $idPagina);
+        return new Response(200, Pages\Contato::getContato());
+    }
+]);
+
+$obRouter->get('/tema', [
+    function ($idPagina) {
+        return new Response(200, Pages\Tema::getTema());
     }
 ]);
