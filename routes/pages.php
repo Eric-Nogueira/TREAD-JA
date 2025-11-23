@@ -21,8 +21,8 @@ $obRouter->get('/contato', [
     }
 ]);
 
-$obRouter->get('/tema', [
+$obRouter->get('/perfil', [
     function ($idPagina) {
-        return new Response(200, Pages\Tema::getTema());
+        return new Response(200, Pages\Perfil::getPerfil());
     }
 ]);

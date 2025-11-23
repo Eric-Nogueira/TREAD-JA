@@ -16,6 +16,12 @@ body {
   display: flex;
 }
 
+body.darktheme {
+  background: #1c1c1c;
+  
+  *{color: #e0e0e0;}
+}
+
 header {
   padding: 20px 0px;
   display: flex;
@@ -24,6 +30,7 @@ header {
   flex-direction: row;
   top: 0;
   width: 100%;
+  right: 0%;
 }
 
 footer {
@@ -32,12 +39,12 @@ footer {
   margin-bottom: 0;
   padding: 20px 0px;
   display: flex;
-  margin-top: 50px;
+  margin-top: 100px;
   color: white;
   background: #ff3200;
+  position: absolute;
+  right: 0%;
 }
-
-/*ESSA PESTE NÃO QUER FICAR NO FIM DA PÁGINA*/
 
 header nav {
   display: flex;
@@ -59,7 +66,10 @@ header nav a {
   transition: 0.2s;
 }
 
-header nav a:hover, header nav a:focus, ul.popup li a:hover, ul.popup li a:focus {
+header nav a:hover,
+header nav a:focus,
+ul.popup li a:hover,
+ul.popup li a:focus {
   transform: translateY(-3.5px);
   color: white;
   cursor: pointer;
@@ -68,7 +78,7 @@ header nav a:hover, header nav a:focus, ul.popup li a:hover, ul.popup li a:focus
 
 header i {
   font-size: 32px;
-  color: #ff3200;
+  color: #ff3200 !important;
 }
 
 section {
@@ -76,7 +86,7 @@ section {
 }
 
 .highlight {
-  color: #ff3200;
+  color: #ff3200 !important;
 }
 
 h1 {
@@ -102,26 +112,26 @@ ul.popup {
   list-style: none;
   padding: 10px 15px;
   width: 150px;
+  transition: 0.2s;
+  z-index: 100;
 }
 
-ul.popup li a {
+ul.popup li a, ul.popup li {
   color: white;
   text-decoration: none;
   display: block;
   padding: 8px 0;
-  transition: 0.2s;
 }
 
 .settings {
-    color: #ff3200 !important;
+  color: #ff3200 !important;
 }
 
 .settings:hover + ul.popup,
 ul.popup:hover {
   display: block;
+  cursor: pointer;
 }
-
-
 
 button {
   background: #ff3200;
@@ -138,3 +148,116 @@ button:hover {
   background: #e62e00;
 }
 
+.profilehead {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 30px;
+  width: 100%;
+  align-items: center;
+  padding: 50px 30px;
+  background: #ff3200;
+  position: absolute;
+  right: 0;
+}
+
+.profilepic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.profileinfos .name, .profileinfos .id {
+  color: white !important;
+  margin-bottom: 5px;
+}
+
+.profileinfos .name {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.profileinfos .id {
+  font-size: 24px;
+  font-weight:400;
+}
+
+.theme-switch {
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  background: #c02600;
+  align-items: center;
+  justify-content: center;
+  float: right;
+  margin-right: 10px;
+  padding: 0;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
+
+li.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-direction: row;
+}
+
+.theme-switch i.bi:last-child{
+  display: none;
+}
+
+.theme-switch i.bi{
+  font-size: 15px;
+  color: #ffd7cd !important;
+  margin: 0;
+  padding: 0;
+  place-self: center;
+}
+
+.darktheme .theme-switch i.bi:first-child{
+  display: none;
+}
+
+.darktheme .theme-switch i.bi:last-child{
+  display: block;
+}
+
+.nichos {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0;
+}
+
+.nicho-title {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.vagas-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: hidden;
+  padding-bottom: 10px;
+  flex-direction: row;
+  width: 100%;
+}
+
+.vaga-card {
+  background: #ff3200;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  min-width: 250px;
+  max-width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.vaga-card h3, .vaga-card p {
+  color: white !important;
+}
