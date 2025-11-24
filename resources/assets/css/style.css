@@ -12,13 +12,18 @@ html,
 body {
   width: 100%;
   height: 100%;
-  background: #fff3e1;
   display: flex;
+  overflow-y: hidden;
 }
 
-body.darktheme {
+body {
+  background: #fff3e1;
+}
+
+body.darktheme, body.darktheme html {
+
   background: #1c1c1c;
-  
+
   *{color: #e0e0e0;}
 }
 
@@ -39,10 +44,10 @@ footer {
   margin-bottom: 0;
   padding: 20px 0px;
   display: flex;
-  margin-top: 100px;
+  margin-top: 10px;
   color: white;
   background: #ff3200;
-  position: absolute;
+  position: relative;
   right: 0%;
 }
 
@@ -240,11 +245,16 @@ li.theme-toggle {
 .vagas-container {
   display: flex;
   gap: 20px;
-  overflow-x: hidden;
+  overflow-x: scroll;
   padding-bottom: 10px;
   flex-direction: row;
   width: 100%;
+  scrollbar-color: #ff3300 transparent;
+  scrollbar-width: thin;
+  scrollbar-face-color: #ff3300;
+
 }
+
 
 .vaga-card {
   background: #ff3200;
@@ -260,4 +270,17 @@ li.theme-toggle {
 
 .vaga-card h3, .vaga-card p {
   color: white !important;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input, textarea, select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
 }

@@ -26,3 +26,9 @@ $obRouter->get('/perfil', [
         return new Response(200, Pages\Perfil::getPerfil());
     }
 ]);
+
+$obRouter->get('/vagas', [
+    function ($idPagina) {
+        return new Response(200, Pages\Vaga::getVaga());
+    }
+]);
