@@ -18,7 +18,7 @@ Class Home extends Page {
                 $itens .= View::render('pages/vagas/item', [
                     'vaga.id' => $objVaga['ID_vaga'] ? : 'XXXX',
                     'vaga.titulo' => $objVaga['titulo'] ? : 'Vazio',
-                    'vaga.empresa' => $objVaga['empresa_cnpj'] ? : 'Vazio'
+                    'vaga.empresa' => $objVaga['empresa_nome'] ? : 'Vazio'
                 ]);
             }
         }

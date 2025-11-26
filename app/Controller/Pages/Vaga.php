@@ -22,7 +22,7 @@ Class Vaga extends Page {
         $vaga->descricao = $postVars['descricao'];
         $vaga->CNPJempresa = $postVars['CNPJempresa'];
         $vaga->requisitos = $postVars['requisitos'];
-        $vaga->jornadaDeTrabalho = $postVars['jornadaDeTrabalho'];
+        $vaga->jornadaDeTrabalho = $postVars['jornadaTrabalho'];
 
         // Aqui você pode adicionar a lógica para salvar a vaga no banco de dados
 

@@ -1,0 +1,19 @@
+<div class="profilehead">
+  <div class="profileinfos">
+    <h2 class="name">{{vaga.titulo}}</h2>
+    <h3 class="id">#{{vaga.id}}</h3>
+  </div>
+</div>
+<div class="vaga-detail-body">
+  <h3>Empresa: {{vaga.empresa}}</h3>
+  <h4>Localização: {{vaga.localizacao}}</h4>
+  <h4>Descrição da Vaga:</h4>
+  <p>{{vaga.descricao}}</p>
+  <h4>Requisitos:</h4>
+  <ul>
+    {{requisitos}}
+  </ul>
+
+  <form action="" method="post">
+    <button type="submit">Candidatar-se</button>
+  </form>

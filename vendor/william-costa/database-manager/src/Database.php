@@ -179,4 +179,104 @@ class Database{
     return true;
   }
 
+  /**
+ * Método responsável por executar consultas com INNER JOIN
+ * @param  string $joinTable    Tabela a ser unida
+ * @param  string $joinCondition Condição do JOIN (ex: 'table1.id = table2.foreign_id')
+ * @param  string $where
+ * @param  string $order
+ * @param  string $limit
+ * @param  string $fields
+ * @return PDOStatement
+ */
+public function innerJoin($joinTable, $joinCondition, $where = null, $order = null, $limit = null, $fields = '*'){
+  //DADOS DA QUERY
+  $where = strlen($where) ? 'WHERE '.$where : '';
+  $order = strlen($order) ? 'ORDER BY '.$order : '';
+  $limit = strlen($limit) ? 'LIMIT '.$limit : '';
+
+  //MONTA A QUERY
+  $query = 'SELECT '.$fields.' FROM '.$this->table.' INNER JOIN '.$joinTable.' ON '.$joinCondition.' '.$where.' '.$order.' '.$limit;
+
+  //EXECUTA A QUERY
+  return $this->execute($query);
+}
+
+/**
+ * Método responsável por executar consultas com LEFT JOIN
+ * @param  string $joinTable    Tabela a ser unida
+ * @param  string $joinCondition Condição do JOIN
+ * @param  string $where
+ * @param  string $order
+ * @param  string $limit
+ * @param  string $fields
+ * @return PDOStatement
+ */
+public function leftJoin($joinTable, $joinCondition, $where = null, $order = null, $limit = null, $fields = '*'){
+  //DADOS DA QUERY
+  $where = strlen($where) ? 'WHERE '.$where : '';
+  $order = strlen($order) ? 'ORDER BY '.$order : '';
+  $limit = strlen($limit) ? 'LIMIT '.$limit : '';
+
+  //MONTA A QUERY
+  $query = 'SELECT '.$fields.' FROM '.$this->table.' LEFT JOIN '.$joinTable.' ON '.$joinCondition.' '.$where.' '.$order.' '.$limit;
+
+  //EXECUTA A QUERY
+  return $this->execute($query);
+}
+
+/**
+ * Método responsável por executar consultas com RIGHT JOIN
+ * @param  string $joinTable    Tabela a ser unida
+ * @param  string $joinCondition Condição do JOIN
+ * @param  string $where
+ * @param  string $order
+ * @param  string $limit
+ * @param  string $fields
+ * @return PDOStatement
+ */
+public function rightJoin($joinTable, $joinCondition, $where = null, $order = null, $limit = null, $fields = '*'){
+  //DADOS DA QUERY
+  $where = strlen($where) ? 'WHERE '.$where : '';
+  $order = strlen($order) ? 'ORDER BY '.$order : '';
+  $limit = strlen($limit) ? 'LIMIT '.$limit : '';
+
+  //MONTA A QUERY
+  $query = 'SELECT '.$fields.' FROM '.$this->table.' RIGHT JOIN '.$joinTable.' ON '.$joinCondition.' '.$where.' '.$order.' '.$limit;
+
+  //EXECUTA A QUERY
+  return $this->execute($query);
+}
+
+/**
+ * Método responsável por executar consultas com múltiplos JOINs
+ * @param  array  $joins  Array de joins [ ['type' => 'INNER|LEFT|RIGHT', 'table' => 'nome_tabela', 'condition' => 'condicao'] ]
+ * @param  string $where
+ * @param  string $order
+ * @param  string $limit
+ * @param  string $fields
+ * @return PDOStatement
+ */
+public function multiJoin($joins, $where = null, $order = null, $limit = null, $fields = '*'){
+  //DADOS DA QUERY
+  $where = strlen($where) ? 'WHERE '.$where : '';
+  $order = strlen($order) ? 'ORDER BY '.$order : '';
+  $limit = strlen($limit) ? 'LIMIT '.$limit : '';
+
+  //MONTA OS JOINS
+  $joinQuery = '';
+  foreach($joins as $join){
+    $type = strtoupper($join['type'] ?? 'INNER');
+    $table = $join['table'];
+    $condition = $join['condition'];
+    $joinQuery .= ' '.$type.' JOIN '.$table.' ON '.$condition;
+  }
+
+  //MONTA A QUERY
+  $query = 'SELECT '.$fields.' FROM '.$this->table.$joinQuery.' '.$where.' '.$order.' '.$limit;
+
+  //EXECUTA A QUERY
+  return $this->execute($query);
+}
+
 }

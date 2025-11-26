@@ -27,8 +27,8 @@ $obRouter->get('/perfil', [
     }
 ]);
 
-$obRouter->get('/vagas', [
-    function ($idPagina) {
-        return new Response(200, Pages\Vaga::getVaga());
+$obRouter->get('/vagas/{id}', [
+    function ($id) {
+        return new Response(200, Pages\VagaDetail::getVagaDetail($id));
     }
 ]);
