@@ -49,8 +49,47 @@ class Vaga
         return $result ? $result : null;
     }
 
-    public function cadastrar()
-    {
-        echo 'cadastrar';
+    public function createCandidatura($id, $cpf){
+        $db = new Database('candidata_se');
+        if(isset($cpf) && isset($id)){
+
+            $select = $db->select('ID_vaga = ' . intval($id), null, null, 'jovem_cpf');
+            $result = $select->fetchAll(\PDO::FETCH_ASSOC);
+
+            $exists = false;
+
+            for( $i = 0; $i < count($result); $i++ ){
+                if($result[$i]['jovem_cpf'] == $cpf){
+                    $exists = true;
+                    break;
+                }
+            }
+
+
+            if (!$exists) {
+                $db->insert([
+                    'ID_vaga' => intval($id),
+                    'jovem_cpf' => $cpf
+                ]);
+                return true;
+            } else {
+                throw new \Exception('Você já se candidatou a essa vaga');
+            }
+        } else {
+            throw new \Exception('Valores não inseridos. Tente novamente');
+        }
+    }
+
+    public static function insertVaga($titulo, $desc, $jornada, $requisitos ,$cnpj){
+        $db = new Database('vaga');
+        if(isset($titulo) && isset($desc) && isset($jornada) && isset($requisitos) && isset($cnpj)){
+            $db->insert([
+                'titulo' => $titulo,
+                'descricao'=> $desc,
+                'jornada_trabalho'=> $jornada,
+                'requisitos'=> $requisitos,
+                'empresa_cnpj'=> $cnpj
+            ]);
+        }
     }
 }

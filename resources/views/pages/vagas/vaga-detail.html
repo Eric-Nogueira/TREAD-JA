@@ -9,11 +9,13 @@
   <h4>Localização: {{vaga.localizacao}}</h4>
   <h4>Descrição da Vaga:</h4>
   <p>{{vaga.descricao}}</p>
+  <h4>Jornada de trabalho:</h4>
+  <p>{{vaga.jornada}} por dia</p>
   <h4>Requisitos:</h4>
-  <ul>
-    {{requisitos}}
+  <ul class="requisitos">
+    {{vaga.requisitos}}
   </ul>
-
-  <form action="" method="post">
-    <button type="submit">Candidatar-se</button>
+{{mensagem}}
+  <form method="post">
+    <button type="submit" name="candidatar" value="candidatar">Candidatar-se</button>
   </form>

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controller\Pages;
+use \App\Session\Login;
 
 use \App\Utils\View;
 Class Page {
@@ -20,6 +21,8 @@ Class Page {
         'footer' => self::getFooter()]
 
     );
+
+    
     }
 }
 

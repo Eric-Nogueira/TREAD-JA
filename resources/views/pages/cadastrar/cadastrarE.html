@@ -1,0 +1,16 @@
+<form class="login" method="post">
+    Nome fantasia:<input type="text" name="nf" id="nf" required>
+    Razão social:<input type="text" name="social_reason" id="social_reason" required>
+    <p class="alert">{{alert.razao}}</p>
+    CNPJ:<input type="text" name="cnpj" id="cnpj" required>
+    <p class="alert">{{alert.cnpj}}</p>
+    Endereço:<input type="text" name="address_enterprise" id="address_enterprise" required>
+    Telefone:<input type="tel" name="phone_enterprise" id="phone_enterprise" required>
+    <p class="alert">{{alert.phone}}</p>
+    E-mail:<input type="email" name="email_enterprise" id="email_enterprise" required>
+    <p class="alert">{{alert.mail}}</p>
+    <button type="submit" name="acao" value="cadastrarE">Cadastrar</button>
+    <hr>
+    <a href="/cadastrar/ja">Cadastre-se como jovem aprendiz</a>
+    <a href="/login/empresa">Já possui uma conta? Faça login!</a>
+</form>
