@@ -1,0 +1,360 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Work Sans", sans-serif;
+  color: #070707;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  overflow-x: hidden;
+}
+
+body {
+  background: #fff3e1;
+  padding-bottom: 70px;
+}
+
+body.darktheme, body.darktheme html {
+
+  background: #1c1c1c;
+
+  *{color: #e0e0e0;}
+}
+
+header {
+  padding: 20px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  top: 0;
+  width: 100%;
+  right: 0%;
+}
+
+footer {
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 0;
+  padding: 20px 20px;
+  display: none;
+  margin-top: auto;
+  background: #ff3200;
+  align-self: end;
+  right: 0%;
+  position:absolute;
+}
+
+footer p, footer h4, footer strong, footer a {
+  color: white !important;
+}
+
+header nav {
+  display: flex;
+  padding: 10px 50px;
+  gap: 15px;
+  background: #ff3200;
+  border-radius: 0.5rem;
+  min-width: 30rem;
+  color: white;
+  background-size: cover;
+  justify-content: center;
+}
+
+header nav a {
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  font-size: 18px;
+  transition: 0.2s;
+}
+
+header nav a:hover,
+header nav a:focus,
+ul.popup li a:hover,
+ul.popup li a:focus {
+  transform: translateY(-3.5px);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+header i {
+  font-size: 32px;
+  color: #ff3200 !important;
+}
+
+section {
+  margin-bottom: 25px;
+}
+
+.highlight {
+  color: #ff3200 !important;
+}
+
+h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+ul.popup {
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background: #ff3200;
+  color: white;
+  border-radius: 5px;
+  list-style: none;
+  padding: 10px 15px;
+  width: 150px;
+  transition: 0.2s;
+  z-index: 100;
+}
+
+ul.popup li a, ul.popup li {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 8px 0;
+}
+
+.settings {
+  color: #ff3200 !important;
+}
+
+.settings:hover + ul.popup,
+ul.popup:hover {
+  display: block;
+  cursor: pointer;
+}
+
+button {
+  background: #ff3200;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #e62e00;
+}
+
+.profilehead {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 30px;
+  width: inherit;
+  align-items: center;
+  padding: 50px 30px;
+  background: #ff3200;
+  position: static;
+  right: 0;
+  min-height: 250px;
+  max-height: 250px;
+  z-index: 50;
+}
+
+.profilepic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.profileinfos .name, .profileinfos .id {
+  color: white !important;
+  margin-bottom: 5px;
+}
+
+.profileinfos .name {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.profileinfos .id {
+  font-size: 24px;
+  font-weight:400;
+}
+
+.theme-switch {
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  background: #c02600;
+  align-items: center;
+  justify-content: center;
+  float: right;
+  margin-right: 10px;
+  padding: 0;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
+
+li.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-direction: row;
+}
+
+.theme-switch i.bi:last-child{
+  display: none;
+}
+
+.theme-switch i.bi{
+  font-size: 15px;
+  color: #ffd7cd !important;
+  margin: 0;
+  padding: 0;
+  place-self: center;
+}
+
+.darktheme .theme-switch i.bi:first-child{
+  display: none;
+}
+
+.darktheme .theme-switch i.bi:last-child{
+  display: block;
+}
+
+.nichos {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0;
+}
+
+.nicho-title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.vagas-container, .candidaturas-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: scroll;
+  padding-bottom: 10px;
+  flex-direction: row;
+  width: 100%;
+  scrollbar-color: #ff3300 transparent;
+  scrollbar-width: thin;
+  scrollbar-face-color: #ff3300;
+
+}
+
+
+.vaga-card, .c-card {
+  background: #ff3200;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  min-width: 250px;
+  max-width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.vaga-card h3, .vaga-card p, .c-card h3, .c-card p {
+  color: white !important;
+}
+
+.vaga-card p, .c-card p {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input, textarea, select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.vaga-detail-body {
+  padding: 10px;
+  max-width: 800px;
+  margin-top: 50px;
+  position: relative;
+}
+
+input, input::placeholder, input:focus, textarea, textarea:focus, textarea::placeholder, select {
+  color: #070707 !important; 
+  transition: 0.2s;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border: #ff5125 3px solid;
+}
+
+p.alert {
+  color: red !important;
+  font-weight: bold;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+}
+
+.success {
+  padding: 10px 15px;
+  border-radius: 10px;
+  background-color: #ff3300;
+  color: #fff !important;
+  min-height: 0;
+  font-weight: 700;
+}
+
+.np {
+  margin-top: 100px;
+}
+
+.add {
+  float: right;
+  width: auto;
+}
+
+.aadd{
+  padding: 0;
+}
+
+.act {
+  align-self: right;
+  display: flex;
+  flex-direction: row;
+  margin-left: 50rem;
+  gap: 10px;
+}
+
+.edit {
+  position: relative;
+  margin-left: 35rem;
+}

@@ -1,0 +1,21 @@
+<form class="login" method="post">
+    Nome completo:<input type="text" name="name" id="name" required>
+    CPF:<input type="text" name="cpf" id="cpf" required>
+    <p class="alert">{{alert.cpf}}</p>
+    RG:<input type="text" name="rg" id="rg" required>
+    <p class="alert">{{alert.rg}}</p>
+    Data de Nascimento:<input type="date" name="birthdate" id="birthdate" required>
+    Endereço:<input type="text" name="address" id="address" required>
+    Telefone:<input type="tel" name="phone" id="phone" required>
+    <p class="alert">{{alert.phone}}</p>
+    E-mail:<input type="email" name="email" id="email" required>
+    <p class="alert">{{alert.mail}}</p>
+    Escolaridade:<textarea name="education" id="education" required></textarea>
+    <button type="submit" name="acao" value="cadastrarJ">Cadastrar</button>
+    <hr>
+    <a href="/cadastrar/empresa">Cadastre-se como empresa</a>
+    <a href="/login/ja">Já possui uma conta? Faça login!</a>
+
+    
+
+</form>

@@ -1,0 +1,25 @@
+<div class="profilehead">
+  <div class="profileinfos">
+    <h2 class="name">{{vaga.titulo}}</h2>
+    <h3 class="id">#{{vaga.id}}</h3>
+  </div>
+  <div class="act">
+    <a href="/editar/{{vaga.id}}"><button>Editar</button></a>
+    <form method="post">
+      <button type="submit" name="apagar" value="apagar">Apagar</button>
+    </form>
+  </div>
+</div>
+<div class="vaga-detail-body">
+  <h3>Empresa: {{vaga.empresa}}</h3>
+  <h4>Localização: {{vaga.localizacao}}</h4>
+  <h4>Descrição da Vaga:</h4>
+  <p>{{vaga.descricao}}</p>
+  <h4>Jornada de trabalho:</h4>
+  <p>{{vaga.jornada}} por dia</p>
+  <h4>Requisitos:</h4>
+  <ul class="requisitos">
+    {{vaga.requisitos}}
+  </ul>
+  {{mensagem}}
+</div>

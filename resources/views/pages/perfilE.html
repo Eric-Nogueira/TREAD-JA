@@ -1,0 +1,23 @@
+<div class="profilehead">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png" alt="" class="profilepic" />
+  <div class="profileinfos">
+    <h2 class="name">{{name}}</h2>
+    <h3 class="id">#{{id}}</h3>
+  </div>
+  <a href="/editarperfil" class="edit"><button>Editar perfil</button></a>
+</div>
+
+
+
+  <section class="nichos np">
+    <h2 class="nicho-title">Candidaturas nas suas vagas</h2>
+    <div class="candidaturas-container">
+            {{itensCandidatura}}
+    </div>
+
+    <section class="nichos np">
+    <h2 class="nicho-title">Suas vagas</h2><a class="aadd"href="/newVaga"><i class="bi bi-plus-circle add"></i></a>
+    <div class="candidaturas-container">
+            {{itensVagas}}
+    </div>
+</section>
